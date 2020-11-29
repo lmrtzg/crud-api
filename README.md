@@ -13,7 +13,8 @@ Uma API básica para realização de operações CRUD (Create, Read, Update and 
 - [ts-node](https://www.npmjs.com/package/ts-node)
 
 ## Comandos
-Após clonar o repositório e instalar as dependências, você pode:
+
+Após clonar o repositório, definir a variável de conexão do banco de dados instalar as dependências, você pode:
 
 *Realizar o build:*
 ```
@@ -34,3 +35,12 @@ npm run dev
 ```
 npm run test
 ```
+----
+### Importante
+Antes de rodar localmente, você precisa fornecer uma URL de um banco de dados MongoDB.
+
+ Você pode fazer isso criando uma arquivo ` .env` e criando a seguinte variável:
+```
+ DB=SUA URL
+```
+----
