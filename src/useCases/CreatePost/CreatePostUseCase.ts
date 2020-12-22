@@ -9,7 +9,7 @@ class CreatePostUseCase {
   }
 
   async exec(data: ICreatePostDTO) {
-    const QueryRes = await this.postsRepository.createPost(data.post, data.user, data.date, data.customId);
+    const QueryRes = await this.postsRepository.createPost(data.text, data.author, data.date, data.customId);
     return QueryRes;
   }
 }

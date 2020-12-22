@@ -2,18 +2,18 @@
 import IPostsRepository from '../repositories/IPostsRepository';
 
 const mockPost = {
-  post: 'Postagem teste',
-  user: 'Usuário teste',
+  text: 'Postagem teste',
+  author: 'Usuário teste',
   date: new Date(),
   customId: '123123teste',
 };
 
 class MockPostsRepository implements IPostsRepository {
-  async createPost(post: string, user: string, date: Date, customId: string) {
+  async createPost(text: string, author: string, date: Date, customId: string) {
     return new Promise<object>((resolve) => {
       const obj = {
-        post,
-        user,
+        text,
+        author,
         date,
         customId,
       };

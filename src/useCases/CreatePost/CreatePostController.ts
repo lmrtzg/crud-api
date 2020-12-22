@@ -10,12 +10,12 @@ class CreatePostController {
   }
 
   async handle(req: Request, res: Response) {
-    const { post, user } = req.body;
+    const { text, author } = req.body;
     const date = new Date();
     try {
       const QueryRes = await this.createPostUseCase.exec({
-        post,
-        user,
+        text,
+        author,
         date,
         customId: uuidv4(),
       });

@@ -1,6 +1,6 @@
 interface IUpdatePostDTO {
   customId: string;
-  newPost: string;
+  newText: string;
 }
 
 export default IUpdatePostDTO;

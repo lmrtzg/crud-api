@@ -4,11 +4,11 @@ import IPostsRepository from '../../IPostsRepository';
 import PostModel from './MongoosePostModel';
 
 class MongoosePostRepository implements IPostsRepository {
-  async createPost(post: string, user: string, date: Date, customId: string) {
+  async createPost(text: string, author: string, date: Date, customId: string) {
     try {
       const QueryRes = await PostModel.create({
-        post,
-        user,
+        text,
+        author,
         date,
         customId,
       });

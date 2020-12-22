@@ -5,16 +5,16 @@ import app from './app';
 
 interface IPostStructure {
   _id: string;
-  post: string;
-  user: string;
+  text: string;
+  author: string;
   date: string;
   customId: string;
   __v: number;
 }
 
 const mockPost = {
-  post: 'Postagem teste',
-  user: 'Usuário teste',
+  text: 'Postagem teste',
+  author: 'Usuário teste',
 };
 
 describe('Teste de Endpoint', () => {
@@ -24,8 +24,8 @@ describe('Teste de Endpoint', () => {
       .send(mockPost)
       .then((res) => {
         expect(res.status).toBe(201);
-        expect(res.body).toHaveProperty('post', mockPost.post);
-        expect(res.body).toHaveProperty('user', mockPost.user);
+        expect(res.body).toHaveProperty('text', mockPost.text);
+        expect(res.body).toHaveProperty('author', mockPost.author);
         done();
       });
   });
@@ -57,7 +57,7 @@ describe('Teste de Endpoint', () => {
         const { customId } = res.body[0];
         request(app)
           .post('/update')
-          .send({ customId, newPost: 'Novo post' })
+          .send({ customId, newText: 'Novo post' })
           .then((res2) => {
             expect(res2.status).toBe(200);
             done();
@@ -71,8 +71,8 @@ describe('Teste de Endpoint', () => {
       .then((res) => {
         expect(res.body).toEqual(expect.arrayContaining([expect.objectContaining<IPostStructure>({
           _id: expect.any(String),
-          post: expect.any(String),
-          user: expect.any(String),
+          text: expect.any(String),
+          author: expect.any(String),
           date: expect.any(String),
           customId: expect.any(String),
           __v: expect.any(Number),

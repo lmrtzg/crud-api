@@ -1,6 +1,6 @@
 interface ICreatePostRequestDTO {
-  post: string;
-  user: string;
+  text: string;
+  author: string;
   date: Date;
   customId: string;
 }

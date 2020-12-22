@@ -10,8 +10,8 @@ class UpdatePostController {
 
   async handle(req: Request, res: Response) {
     try {
-      const { customId, newPost } = req.body;
-      const QueryResCode = await this.updatePostUseCase.exec({ customId, newPost });
+      const { customId, newText } = req.body;
+      const QueryResCode = await this.updatePostUseCase.exec({ customId, newText });
       return res.sendStatus(QueryResCode);
     } catch (err) {
       return res.status(400).json({

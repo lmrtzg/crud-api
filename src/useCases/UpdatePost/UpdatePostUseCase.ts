@@ -9,7 +9,7 @@ class UpdatePostUseCase {
   }
 
   async exec(data: IUpdatePostDTO) {
-    const QueryResCode = this.postsRepository.updatePost(data.customId, data.newPost);
+    const QueryResCode = this.postsRepository.updatePost(data.customId, data.newText);
     return QueryResCode;
   }
 }

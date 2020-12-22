@@ -8,12 +8,12 @@ describe('Teste de caso de uso (Atualizar Post)', () => {
   const updatePostUseCase = new UpdatePostUseCase(mockPostsRepository);
 
   it('Caso de sucesso: deve retornar status 200', async () => {
-    const QueryRes = await updatePostUseCase.exec({ customId, newPost: 'Random' });
+    const QueryRes = await updatePostUseCase.exec({ customId, newText: 'Random' });
     expect(QueryRes).toBe(200);
   });
 
   it('Caso de falha: deve retornar status 404', async () => {
-    const QueryRes = await updatePostUseCase.exec({ customId: 'random', newPost: 'Random' });
+    const QueryRes = await updatePostUseCase.exec({ customId: 'random', newText: 'Random' });
     expect(QueryRes).toBe(404);
   });
 });
